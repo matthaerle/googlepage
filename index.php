@@ -4,7 +4,7 @@ echo "<head>
 		<title>Matts Test Page</title>
 	</head>";
 echo "<body>
-		<h2>Hello World</h2>
+		<img src='redditImage.jpg' alt='Hi' />
 		</body>";
 echo "</html>"
 
