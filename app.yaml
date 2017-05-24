@@ -9,10 +9,10 @@ handlers:
   application_readable: true
   
 - url: /scripts
-  static_dir:scripts
+  static_dir: scripts
 	
 - url: /css
-  static_dir:css
+  static_dir: css
 
 # Serve php scripts.
 - url: /.*
