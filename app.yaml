@@ -8,11 +8,11 @@ handlers:
   upload: .+\.(gif|png|jpg)$
   application_readable: true
   
-- 	url: /scripts
-	static_dir:scripts
+-url: /scripts
+static_dir:scripts
 	
--	url: /css
-	static_dir:css
+-url: /css
+static_dir:css
 
 # Serve php scripts.
 - url: /.*
