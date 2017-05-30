@@ -68,7 +68,8 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #18BC9C;
+  background-image: url(../img/rnbw.jpg);
+  background-size: cover;
   color: white;
 }
 header .container {
