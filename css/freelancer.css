@@ -3,6 +3,15 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+.useful-links {
+    background-color: #18BC9C;
+    color: white;
+}
+.useful-links:hover {
+    background-color: #989ba0;
+    color: black;
+}
+
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
