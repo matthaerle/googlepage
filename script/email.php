@@ -18,7 +18,7 @@ try {
     $message->send();
     return true;
 } catch (InvalidArgumentException $e) {
-    echo 'There was an error';
+    return false;
 }
 
 ?>
