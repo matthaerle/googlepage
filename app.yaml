@@ -6,9 +6,13 @@ inbound_services:
   - mail
   - warmup
 
+
 handlers:
 # Serve images as static resources.
-  
+
+- url: /script/.+
+  script: email.php
+  login: admin
 - url: /css
   static_dir: css
 - url: /script/
