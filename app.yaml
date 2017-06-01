@@ -2,6 +2,9 @@ runtime: php55
 api_version: 1
 service: home
 
+inbound_services:
+-mail
+
 handlers:
 # Serve images as static resources.
 - url: /(.+\.(gif|png|jpg))$
