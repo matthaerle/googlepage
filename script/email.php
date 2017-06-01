@@ -16,7 +16,7 @@ try {
     $message->setTextBody('Hello, world!');
     //$message->addAttachment('image.jpg', $image_data, $image_content_id);
     $message->send();
-    echo 'Mail Sent';
+    return true;
 } catch (InvalidArgumentException $e) {
     echo 'There was an error';
 }
