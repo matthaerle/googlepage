@@ -3,7 +3,8 @@ api_version: 1
 service: home
 
 inbound_services:
--mail
+  - mail
+  - warmup
 
 handlers:
 # Serve images as static resources.
