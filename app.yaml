@@ -15,8 +15,8 @@ handlers:
   
 - url: /css
   static_dir: css
-- url: /script
-  static_dir: script
+- url: /script/
+  script: /email.php
 - url: /img
   static_dir: img
 - url: /js
