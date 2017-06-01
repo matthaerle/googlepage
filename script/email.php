@@ -9,7 +9,7 @@
   $comment = $_POST['message'];
   
   //send email
-  mail($admin_email, "$subject", $comment, "From:" . $email);
+  mail($email, $subject, $comment);
   
   //Email response
   echo "Thank you for contacting us!";
