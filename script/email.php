@@ -1,21 +1,24 @@
 <?php
-//if "email" variable is filled out, send email
-  if (isset($_POST['email']))  {
-  
-  //Email information
-  $admin_email = $_POST['email'];
-  $email = 'matthaerle@gmail.com';
-  $subject = $_POST['phone'];
-  $comment = $_POST['message'];
-  
-  //send email
-  mail($email, $subject, $comment);
-  
-  //Email response
-  echo "Thank you for contacting us!";
-  }
-  
-  //if "email" variable is not filled out, display the form
-  else  {
-  }
+use google\appengine\api\mail\Message;
+
+// Notice that $image_content_id is the optional Content-ID header value of the
+// attachment. Must be enclosed by angle brackets (<>)
+//$image_content_id = '<image-content-id>';
+
+// Pull in the raw file data of the image file to attach it to the message.
+//$image_data = file_get_contents('image.jpg');
+
+try {
+    $message = new Message();
+    $message->setSender('matthaerle@gmail.com');
+    $message->addTo('matthaerle@gmail.com');
+    $message->setSubject('Example email');
+    $message->setTextBody('Hello, world!');
+    //$message->addAttachment('image.jpg', $image_data, $image_content_id);
+    $message->send();
+    echo 'Mail Sent';
+} catch (InvalidArgumentException $e) {
+    echo 'There was an error';
+}
+
 ?>
