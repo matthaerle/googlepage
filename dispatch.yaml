@@ -1,6 +1,3 @@
-dispatch:
-- url: "*/barbarascrustycunts.com"
-  service: barbara
-  
+dispatch:  
 - url: "*/matthaerle.com"
   service: homepage
