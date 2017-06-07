@@ -1,6 +1,6 @@
 dispatch:
-  - url: "http://barbarascrustycunts.com"
+  - url: "*/barbarascrustycunts.com"
   service: barbara
   
-  - url: "htt://matthaerle.com"
+  - url: "*/matthaerle.com"
   service: homepage
