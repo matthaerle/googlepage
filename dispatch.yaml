@@ -1,0 +1,6 @@
+dispatch:
+  - url: "barbarascrustycunts.com"
+  service: barbara
+  
+  - url: "matthaerle.com"
+  service: homepage
