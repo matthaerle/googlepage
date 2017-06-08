@@ -19,10 +19,32 @@
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function(){ 
+    
+    $('.navbar-collapse ul li a').click(function(event) {
+        if($(event.target).is('#drop_down')) {
+            //Do Nothing
+        } else {
             $('.navbar-toggle:visible').click();
-    });
-
+        }
+    })
+    
+    
+    /*if ($('.navbar-collapse ul li a.dropdown').click) {
+    }
+    if ($('.navbar-collapse ul li a').click) {
+        function() {
+            $('.navbar-toggle:visible').click();
+        }
+         
+    }*/
+    
+    /*$('.navbar-collapse ul li a').click(function(){ 
+            $('.navbar-toggle:visible').click();
+    });/*
+    $('.navbar-collapse ul li a.dropdown').onclick(function(){ 
+            //$('.navbar-toggle:visible').click();
+    });*/
+    
     // Offset for Main Navigation
     $('#mainNav').affix({
         offset: {
