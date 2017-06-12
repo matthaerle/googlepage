@@ -14,7 +14,9 @@
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #fff;
 }
-
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: black;
+}
 
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
