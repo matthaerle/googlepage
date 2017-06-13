@@ -11,12 +11,20 @@
     background-color: #989ba0;
     color: black;
 }
+.navbar-default .navbar-nav .open .dropdown-menu > li {
+    text-align: center;
+}
 .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #fff;
+    text-align: center;
 }
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
     color: black;
 }
+.navbar-default .navbar-nav .open .dropdown-menu {
+    transform: translate(15%, 0);
+}
+
 
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -160,7 +168,7 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-toggle {
   color: white;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 10px;
   border-color: white;
 }
