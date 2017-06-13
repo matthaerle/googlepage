@@ -21,9 +21,6 @@
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
     color: black;
 }
-.navbar-default .navbar-nav .open .dropdown-menu {
-    transform: translate(15%, 0);
-}
 
 
 body {
