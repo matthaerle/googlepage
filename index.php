@@ -35,16 +35,22 @@
     <?php
       require 'db/db.php'; 
     
-    $sql = "select * from Support_Link_Groups";
-    $result = $conn->query($sql);
+    try {
+        $sql = "select * from Support_Link_Groups";
+        $result = $conn->query($sql);
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
     
-    if ($result->num_rows > 0 ) {
-        while ($row = $result->fetch_assoc()) {
-            echo "GroupID: " . $row["Group_ID"]. " Group_Name: " . $row["Group_Name"] . "<br>";
+        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+            echo $v;
         }
-    } else {
-        echo "0 results";
     }
+    catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    $conn = null;
+    
     $conn->close();
     ?>
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
