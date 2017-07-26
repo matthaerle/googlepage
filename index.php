@@ -68,8 +68,6 @@
         echo "Error: " . $e->getMessage();
     }
     $conn = null;
-    
-    $conn->close();
     ?>
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
