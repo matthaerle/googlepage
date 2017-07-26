@@ -30,7 +30,7 @@ handlers:
 - url: /db/
   script: /db.php
 - url: /admin/links
-  script /index.php
+  script: /index.php
   
 
 # Serve php scripts.
