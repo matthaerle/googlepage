@@ -24,7 +24,7 @@ handlers:
 - url: /less
   static_dir: less
 - url: /mail
-  static_dir: mail
+  script: /mail/contact_me.php
 - url: /vendor
   static_dir: vendor
 - url: /db/
