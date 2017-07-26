@@ -58,6 +58,11 @@
         $result = $conn->query($sql);
     
         foreach($result as $row) { 
+            $result = $conn->query("select * from Tech_Support_Links where Group_ID = '" .$row['Group_ID'] . "'");
+            echo $row['Group_Name'];
+            foreach($result as $row) {
+                echo $row['Link_Text'];
+            }
             echo $row['Group_ID'] . "<br />";
             echo $row['Group_Name'] . "<br />";
         }
