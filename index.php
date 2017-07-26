@@ -54,11 +54,7 @@
 } 
     
     try {
-        $sql = "select * from Support_Link_Groups";
         $result = $conn->query($sql);
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_KEY_PAIR); 
     
         foreach($result as $row) { 
             echo $row['Group_ID'] . "<br />";
