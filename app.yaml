@@ -31,7 +31,8 @@ handlers:
   script: /db.php
 - url: /admin/links
   script: /admin/index.php
-  
+- url: /admin/links/add
+  script: /admin/add.php
 
 # Serve php scripts.
 - url: /

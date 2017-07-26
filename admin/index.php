@@ -1,9 +1,9 @@
 <html>
 <body>
 
-<form action="add.php" method="get">
+<form action="add.php" method="post">
 Link Text: <input type="text" name="name"><br>
-Link URL: <input type="text" name="email"><br>
+Link URL: <input type="text" name="url"><br>
     <?php
     require '../db/db.php';
     try {
