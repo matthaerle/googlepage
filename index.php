@@ -58,10 +58,11 @@
         $result = $conn->query($sql);
         $stmt = $conn->prepare($sql);
         $stmt->execute();
-        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+        $result = $stmt->fetchAll(PDO::FETCH_KEY_PAIR); 
     
-        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
-            echo $v;
+        foreach($result as $row) { 
+            echo $row['Group_ID'] . "<br />";
+            echo $row['Group_Name'] . "<br />";
         }
     }
     catch (PDOException $e) {
