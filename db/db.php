@@ -13,5 +13,4 @@ $conn = new pdo('mysql:unix_socket=/cloudsql/homepagematt:us-central1:homepage;d
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
 ?>
