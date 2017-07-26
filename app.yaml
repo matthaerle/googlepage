@@ -27,6 +27,8 @@ handlers:
   static_dir: mail
 - url: /vendor
   static_dir: vendor
+- url: /db/
+  script: /db.php
   
 
 # Serve php scripts.

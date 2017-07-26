@@ -32,6 +32,21 @@
 </head>
 
 <body id="page-top" class="index">
+    <?php
+      require 'db/db.php'; 
+    
+    $sql = "select * from Support_Link_Groups";
+    $result = $conn->query($sql);
+    
+    if (result->num_rows > 0 ) {
+        while ($row = $result->fetch_assoc()) {
+            echo "GroupID: " . $row["Group_ID"]. " Group_Name: " . $row["Group_Name"] . "<br>";
+        }
+    } else {
+        echo "0 results";
+    }
+    $conn->close();
+    ?>
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
