@@ -78,17 +78,6 @@
                         }
                         $conn = null;
                         ?>
-                        
-                        <!--
-                        
-                            <li class="dropdown-header">Utilities</li>
-                            <li><a href="http://aka.ms/Program_Install_and_Uninstall">Microsoft Program Remover</a></li>
-                            <li><a href="https://www.malwarebytes.com/mwb-download/thankyou/">Malwarebytes</a></li>
-                            <li class="divider"></li>
-                        <li class="dropdown-header">Remote Control</li>
-                            <li><a href="https://download.teamviewer.com/download/TeamViewer_Setup.exe">TeamViewer</a></li>
-                            <li><a href="https://download.teamviewer.com/download/TeamViewerQS.exe">TeamViewer QuickSupport</a></li>
-                            <li><a href="https://play.google.com/store/apps/details?id=com.teamviewer.quicksupport.market">Teamviewer QuickSupport<br />Android</a></li> -->
                         </ul>
                         
                     </li>
