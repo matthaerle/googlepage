@@ -31,7 +31,7 @@ handlers:
 
 # Serve php scripts.
 - url: /.*
-  script: index.html
+  script: index.php
   
 - url: /favicon\.ico
   static_files: static/images/favicon.ico
