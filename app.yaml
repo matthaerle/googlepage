@@ -29,6 +29,8 @@ handlers:
   static_dir: vendor
 - url: /db/
   script: /db.php
+- url: /admin/links
+  script /index.php
   
 
 # Serve php scripts.
