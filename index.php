@@ -54,6 +54,7 @@
 } 
     
     try {
+        $sql = "select * from Support_Link_Groups";
         $result = $conn->query($sql);
     
         foreach($result as $row) { 
