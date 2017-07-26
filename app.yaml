@@ -34,7 +34,7 @@ handlers:
   
 
 # Serve php scripts.
-- url: /.*
+- url: /
   script: index.php
   
 - url: /favicon\.ico
