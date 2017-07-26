@@ -38,3 +38,12 @@ handlers:
 - url: /favicon\.ico
   static_files: static/images/favicon.ico
   upload: static/images/favicon\.ico
+  
+# [START env]
+env_variables:
+  # Replace project, instance, database, user and password with the values obtained
+  # when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/homepagematt:us-central1:homepage;dbname=homepage
+  MYSQL_USER: root
+  MYSQL_PASSWORD: ''
+# [END env]
