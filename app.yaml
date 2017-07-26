@@ -29,12 +29,12 @@ handlers:
   static_dir: vendor
 - url: /db/
   script: /db.php
-- url: /admin/links
+- url: /admin/links/.*
   script: /admin/index.php
   
 
 # Serve php scripts.
-- url: /
+- url: /.*
   script: index.php
   
 - url: /favicon\.ico
