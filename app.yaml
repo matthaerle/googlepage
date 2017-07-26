@@ -29,7 +29,7 @@ handlers:
   static_dir: vendor
 - url: /db/
   script: /db.php
-- url: /admin
+- url: /admin/links
   script: /admin/index.php
   
 
