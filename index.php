@@ -32,28 +32,7 @@
 </head>
 
 <body id="page-top" class="index">
-    <?php
-      require 'db/db.php'; 
     
-    
-    try {
-        $sql = "select * from Support_Link_Groups";
-        $result = $conn->query($sql);
-    
-        foreach($result as $row) { 
-            $result = $conn->query("select * from Tech_Support_Links where Group_ID = '" .$row['Group_ID'] . "'");
-            echo $row['Group_Name'];
-            foreach($result as $row) {
-                echo $row['Link_Text'] . " " . $row['Link_URL'] . "<br />";
-                
-            }
-        }
-    }
-    catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-    $conn = null;
-    ?>
 <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
     <!-- Navigation -->
@@ -76,6 +55,32 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" id="drop_down">Tech Support Links<span class="caret"></span></a>
                         <ul style="background-color: #2c3e50;" class="dropdown-menu" id="wht_txt">
+                        
+                        <?php
+                          require 'db/db.php'; 
+
+
+                        try {
+                            $sql = "select * from Support_Link_Groups";
+                            $result = $conn->query($sql);
+
+                            foreach($result as $row) { 
+                                $result = $conn->query("select * from Tech_Support_Links where Group_ID = '" .$row['Group_ID'] . "'");
+                                echo "<li class='dropdown-header'>".$row['Group_Name']."</li>";
+                                foreach($result as $row) {
+                                    echo "<li><a href='".$row['Link_URL']."'>". $row['Link_Text'] . "</a></li>";
+
+                                }
+                            }
+                        }
+                        catch (PDOException $e) {
+                            echo "Error: " . $e->getMessage();
+                        }
+                        $conn = null;
+                        ?>
+                        
+                        <!--
+                        
                             <li class="dropdown-header">Utilities</li>
                             <li><a href="http://aka.ms/Program_Install_and_Uninstall">Microsoft Program Remover</a></li>
                             <li><a href="https://www.malwarebytes.com/mwb-download/thankyou/">Malwarebytes</a></li>
@@ -83,7 +88,7 @@
                         <li class="dropdown-header">Remote Control</li>
                             <li><a href="https://download.teamviewer.com/download/TeamViewer_Setup.exe">TeamViewer</a></li>
                             <li><a href="https://download.teamviewer.com/download/TeamViewerQS.exe">TeamViewer QuickSupport</a></li>
-                            <li><a href="https://play.google.com/store/apps/details?id=com.teamviewer.quicksupport.market">Teamviewer QuickSupport<br />Android</a></li>
+                            <li><a href="https://play.google.com/store/apps/details?id=com.teamviewer.quicksupport.market">Teamviewer QuickSupport<br />Android</a></li> -->
                         </ul>
                         
                     </li>
