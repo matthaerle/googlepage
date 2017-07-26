@@ -63,8 +63,6 @@
             foreach($result as $row) {
                 echo $row['Link_Text'];
             }
-            echo $row['Group_ID'] . "<br />";
-            echo $row['Group_Name'] . "<br />";
         }
     }
     catch (PDOException $e) {
