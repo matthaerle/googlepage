@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<form action="add.php" method="post">
+<form action="links/add/" method="post">
 Link Text: <input type="text" name="name"><br>
 Link URL: <input type="text" name="url"><br>
     <?php
