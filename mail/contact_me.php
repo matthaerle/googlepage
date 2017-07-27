@@ -18,7 +18,7 @@ try {
     $message->send();
     echo 'Mail Sent';
 } catch (InvalidArgumentException $e) {
-    echo 'There was an error';
+    echo 'There was an error' . $e->getMessage();
 }
 
 /*// Create the email and send the message
