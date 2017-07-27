@@ -7,7 +7,7 @@ $email_address = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
 
-echo $name . " " . $email_address . " " . $phone;
+echo $name . " " . $email_address . " " . $phone . " " . $test;
 	
 try {
     $message = new Message();
