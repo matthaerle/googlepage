@@ -32,7 +32,8 @@
         
         var request;
         
-        $("#contactForm").submit(function(event) {
+        $(document).ready(function() {
+            $("#contactForm").submit(function(event) {
             event.preventDefault();
             if (request) {
                 request.abort();
@@ -71,6 +72,8 @@
         $inputs.prop("disabled", false);
     });
         });
+        });
+        
     </script>
 
 </head>
