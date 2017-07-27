@@ -552,6 +552,8 @@
                     phone = $form.find("#phone").val(),
                     message = $form.find("#message");
                 console.log(name);
+                
+                var posting = $.post(url , { name: name, email:email, phone:phone,message:message});
         });
         
     </script>
