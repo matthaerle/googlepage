@@ -231,7 +231,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" onclick="postStuff();" class="btn btn-success btn-lg">Send</button>
+                                <button onclick="postStuff();" class="btn btn-success btn-lg">Send</button>
                             </div>
                         </div>
                     </form>
