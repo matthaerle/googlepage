@@ -564,7 +564,7 @@
         // Create our XMLHttpRequest object
         var hr = new XMLHttpRequest();
         // Create some variables we need to send to our PHP file
-        var url = "/email";
+        var url = "/mail";
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
         var phone = document.getElementById("phone").value;
