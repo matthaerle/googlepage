@@ -1,10 +1,10 @@
 <?php
 use google\appengine\api\mail\Message;
 
-$name = strip_tags(htmlspecialchars($_POST['name']));
-$email_address = strip_tags(htmlspecialchars($_POST['email']));
-$phone = strip_tags(htmlspecialchars($_POST['phone']));
-$message = strip_tags(htmlspecialchars($_POST['message']));
+$name = htmlspecialchars($_POST['name']);
+$email_address = htmlspecialchars($_POST['email']);
+$phone = htmlspecialchars($_POST['phone']);
+$message = htmlspecialchars($_POST['message']);
 	
 try {
     $message = new Message();
