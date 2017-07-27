@@ -545,7 +545,7 @@
         
             $("#contactForm").submit(function(event) {
             event.preventDefault();
-                var $form = $(this),
+                var $form = $("#contactForm"),
                     name = $form.find("#name").val(),
                     url = "https://homepagematt.appspot.com/email",
                     email = $form.find("#email").val(),
