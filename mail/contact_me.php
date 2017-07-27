@@ -8,8 +8,6 @@ $email_address = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
 $msg = "Name: " .$name. "\nPhone Number: ". $phone . "\nEmail Address: " . $email_address . "\nMessage: " . $message;
-
-echo $name . " " . $email_address . " " . $phone . " " . $message;
 	
 try {
     $message = new Message();
@@ -18,7 +16,7 @@ try {
     $message->setSubject("${name}");
     $message->setTextBody($msg);
     $message->send();
-    echo 'Mail Sent';
+    echo 'E-Mail Sent';
 } catch (InvalidArgumentException $e) {
     echo 'There was an error' . $e->getMessage();
 }
