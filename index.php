@@ -576,7 +576,7 @@
         hr.onreadystatechange = function() {
             if(hr.readyState == 4 && hr.status == 200) {
                 var return_data = hr.responseText;
-                document.getElementById("status").innerHTML = return_data;
+                document.getElementById("result").innerHTML = return_data;
             }
         }
         // Send the data to PHP now... and wait for response to update the status div
