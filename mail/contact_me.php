@@ -16,7 +16,7 @@ try {
     $message->setSubject("${name}");
     $message->setTextBody($msg);
     $message->send();
-    echo 'E-Mail Sent';
+    echo 'E-Mail Sent to Matt';
 } catch (InvalidArgumentException $e) {
     echo 'There was an error' . $e->getMessage();
 }
