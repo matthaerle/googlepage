@@ -9,7 +9,7 @@ $message = $_POST['message'];
 	
 try {
     $message = new Message();
-    $message->setSender('matthaerle4@gmail.com');
+    $message->setSender('matthaerle@gmail.com');
     $message->addTo('matthaerle@gmail.com');
     $message->setSubject($name.' Contact');
     $message->setTextBody($message);
