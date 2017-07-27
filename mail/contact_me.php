@@ -16,7 +16,7 @@ try {
     $message->setSender('matthaerle@gmail.com');
     $message->addTo('matthaerle@gmail.com');
     $message->setSubject("${name}");
-    $message->setTextBody("hello");
+    $message->setTextBody($msg);
     $message->send();
     echo 'Mail Sent';
 } catch (InvalidArgumentException $e) {
