@@ -554,10 +554,14 @@
                 console.log(name);
                 
                 var posting = $.post(url , { name: name, email:email, phone:phone,message:message});
+                posting.done(function( data ) {
+                var content = $( data ).find( "#content" );
+                $( "#result" ).empty().append( content );
+              });
         });
         
     </script>
-
+<div id="result"></div>
 </body>
 
 </html>
