@@ -1,6 +1,7 @@
 <?php
 use \google\appengine\api\mail\Message;
-	
+echo "Hello";
+
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
 $phone = strip_tags(htmlspecialchars($_POST['phone']));
@@ -17,7 +18,7 @@ try {
 } catch (InvalidArgumentException $e) {
     echo 'There was an error';
 }
-echo "Hello";
+
 /*// Create the email and send the message
 $to = 'matthaerle4@gmail.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "Website Contact Form:  $name";
