@@ -231,7 +231,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                                <button type="submit" onclick="postStuff();" class="btn btn-success btn-lg">Send</button>
                             </div>
                         </div>
                     </form>
@@ -542,7 +542,7 @@
     <script type="text/javascript">
         
         var request;
-        
+        /*
             $("#contactForm").submit(function(event) {
             event.preventDefault();
                 var $form = $("#contactForm"),
@@ -559,9 +559,33 @@
                 $( "#result" ).empty().append( content );
               });
         });
+        */
+        function postStuff(){
+        // Create our XMLHttpRequest object
+        var hr = new XMLHttpRequest();
+        // Create some variables we need to send to our PHP file
+        var url = "/email";
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+        var vars = "name="+name+"&email="+email+"&phone="+phone+"&message="+message;
+        hr.open("POST", url, true);
+        hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // Access the onreadystatechange event for the XMLHttpRequest object
+        hr.onreadystatechange = function() {
+            if(hr.readyState == 4 && hr.status == 200) {
+                var return_data = hr.responseText;
+                document.getElementById("status").innerHTML = return_data;
+            }
+        }
+        // Send the data to PHP now... and wait for response to update the status div
+        hr.send(vars); // Actually execute the request
+        document.getElementById("status").innerHTML = "processing...";
+        }
         
     </script>
-<div id="result"></div>
+<div id="status"></div>
 </body>
 
 </html>
