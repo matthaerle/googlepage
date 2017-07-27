@@ -543,47 +543,15 @@
         
         var request;
         
-        $(document).ready(function() {
             $("#contactForm").submit(function(event) {
             event.preventDefault();
-            if (request) {
-                request.abort();
-            }
-            var $form =$(this);
-            
-            var $inputs = $form.find("input,button,textarea");
-            
-            var serializedData = $form.serialize();
-            
-            $inputs.prop("disabled", true);
-            
-            request = $.ajax({
-                url: "/mail",
-                type: "post",
-                data: serializedData
-            });
-            
-            request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("Hooray, it worked!");
-                console.log(request);
-    });
-            // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-        $("#result").html("There is an error on submit");
-    });
-            // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
-    });
-        });
+                var $form = $(this),
+                    name = $form.find("#name").val(),
+                    url = "/email",
+                    email = $form.find("#email").val(),
+                    phone = $form.find("#phone").val(),
+                    message = $form.find("#message");
+                console.log(name);
         });
         
     </script>
