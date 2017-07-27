@@ -547,7 +547,7 @@
             event.preventDefault();
                 var $form = $(this),
                     name = $form.find("#name").val(),
-                    url = "/email",
+                    url = "https://homepagematt.appspot.com/email",
                     email = $form.find("#email").val(),
                     phone = $form.find("#phone").val(),
                     message = $form.find("#message");
