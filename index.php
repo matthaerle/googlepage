@@ -28,53 +28,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript">
-        
-        var request;
-        
-        $(document).ready(function() {
-            $("#contactForm").submit(function(event) {
-            event.preventDefault();
-            if (request) {
-                request.abort();
-            }
-            var $form =$(this);
-            
-            var $inputs = $form.find("input,button,textarea");
-            
-            var serializedData = $form.serialize();
-            
-            $inputs.prop("disabled", true);
-            
-            request = $.ajax({
-                url: "/mail",
-                type: "post",
-                data: serializedData
-            });
-            
-            request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("Hooray, it worked!");
-    });
-            // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-        $("#result").html("There is an error on submit");
-    });
-            // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
-    });
-        });
-        });
-        
-    </script>
+    
 
 </head>
 
@@ -584,6 +538,54 @@
 
     <!-- Theme JavaScript -->
     <script src="js/freelancer.js"></script>
+    
+    <script type="text/javascript">
+        
+        var request;
+        
+        $(document).ready(function() {
+            $("#contactForm").submit(function(event) {
+            event.preventDefault();
+            if (request) {
+                request.abort();
+            }
+            var $form =$(this);
+            
+            var $inputs = $form.find("input,button,textarea");
+            
+            var serializedData = $form.serialize();
+            
+            $inputs.prop("disabled", true);
+            
+            request = $.ajax({
+                url: "/mail",
+                type: "post",
+                data: serializedData
+            });
+            
+            request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        console.log("Hooray, it worked!");
+    });
+            // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+        $("#result").html("There is an error on submit");
+    });
+            // Callback handler that will be called regardless
+    // if the request failed or succeeded
+    request.always(function () {
+        // Reenable the inputs
+        $inputs.prop("disabled", false);
+    });
+        });
+        });
+        
+    </script>
 
 </body>
 
