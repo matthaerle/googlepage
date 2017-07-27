@@ -1,5 +1,5 @@
 <?php
-use \google\appengine\api\mail\Message;
+use google\appengine\api\mail\Message;
 
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
