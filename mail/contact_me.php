@@ -7,6 +7,7 @@ $name = $_POST['name'];
 $email_address = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
+$msg = "Name: " .$name. "/nPhone Number: ". $phone . "/nEmail Address: " . $email_address . "/nMessage: " . $message;
 
 echo $name . " " . $email_address . " " . $phone . " " . $message;
 	
