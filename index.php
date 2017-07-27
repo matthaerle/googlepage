@@ -62,6 +62,7 @@
             "The following error occurred: "+
             textStatus, errorThrown
         );
+        $("#result").html("There is an error on submit");
     });
             // Callback handler that will be called regardless
     // if the request failed or succeeded
@@ -277,6 +278,7 @@
                             </div>
                         </div>
                     </form>
+                    <div id="result"></div>
                 </div>
             </div>
         </div>
