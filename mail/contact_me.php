@@ -2,7 +2,6 @@
 use google\appengine\api\mail\Message;
 
 $name = $_POST['name'];
-echo $name;
 $email_address = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
