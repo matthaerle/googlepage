@@ -1,6 +1,5 @@
 <?php
 use \google\appengine\api\mail\Message;
-echo "Hello";
 
 $name = strip_tags(htmlspecialchars($_POST['name']));
 $email_address = strip_tags(htmlspecialchars($_POST['email']));
