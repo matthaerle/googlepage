@@ -566,6 +566,7 @@
             request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         console.log("Hooray, it worked!");
+                console.log(request);
     });
             // Callback handler that will be called on failure
     request.fail(function (jqXHR, textStatus, errorThrown){
