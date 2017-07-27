@@ -10,7 +10,7 @@ try {
     $message = new Message();
     $message->setSender('matthaerle4@gmail.com');
     $message->addTo('matthaerle@gmail.com');
-    $message->setSubject($name.' Contact');
+    $message->setSubject($name);
     $message->setTextBody($message);
     $message->send();
     echo 'Mail Sent';
