@@ -13,8 +13,8 @@ try {
     $message = new Message();
     $message->setSender('matthaerle4@gmail.com');
     $message->addTo('matthaerle@gmail.com');
-    $message->setSubject($name);
-    $message->setTextBody($message);
+    $message->setSubject(' '.$name . ' ');
+    $message->setTextBody(' '.$message.' ');
     $message->send();
     echo 'Mail Sent';
 } catch (InvalidArgumentException $e) {
