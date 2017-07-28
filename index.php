@@ -107,7 +107,7 @@
                     <div class="intro-text">
                         <h1 class="name">Matt's Homepage</h1>
                         <hr class="star-light">
-                        <span class="skills">Computer Programmer<br />Android Developer - Dot Net - Java Coder</span>
+                        <span class="skills">Computer Programmer<br />Android Developer - Dot Net - Java Coder - PHP - SQL/MySQL</span>
                     </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                     <p>Welcome to my home page, if you have found this webpage, congratulations</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+                    <p>This page was coded with PHP and uses MySQL</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
