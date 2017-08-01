@@ -15,7 +15,8 @@
 <body>
 
 <div class="container">
-<div class="col-lg-12>
+    <div class="col-lg-2"></div>
+<div class="col-lg-2>
 	<form action="links/add" method="post">
 	Link Text: <input type="text" name="name"><br>
 	Link URL: <input type="text" name="url"><br>
