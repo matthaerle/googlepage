@@ -17,16 +17,14 @@
 <div class="container">
     <div class="col-lg-2"></div>
         <div class="col-lg-2>
-            <form action="links/add" method="post">
-            Link Text: <input type="text" name="name"><br>
-            Link URL: <input type="text" name="url"><br>
+            <form action="links/add" method="post">Link Text: <input type="text" name="name"><br>Link URL: <input type="text" name="url"><br>
                 <?php
                 require '../db/db.php';
                 try {
                     $result = $conn->query("select * from Support_Link_Groups");
                     echo '<select class="form-dropdown" id="group" name="group">';
                     foreach ($result as $row) {
-                        echo '<option value="' . $row['Group_ID'] .'" > '. $row['Group_Name'] . '</option>';
+                        echo '<option value="' . $row['Group_ID'] .'" >'. $row['Group_Name'] . '</option>';
                     }
                     echo '</select>';
                 }
@@ -35,7 +33,7 @@
                 }
                 $conn = null;
                  ?>
-            <input type="submit">
+            <input type="submit" />
             </form>
         </div>
 	</div>
