@@ -15,7 +15,7 @@
 <body>
 
 <div class="container">
-
+<div class="col-lg-12>
 	<form action="links/add" method="post">
 	Link Text: <input type="text" name="name"><br>
 	Link URL: <input type="text" name="url"><br>
@@ -36,6 +36,7 @@
 	     ?>
 	<input type="submit">
 	</form>
+	</div>
 </div>
 
 </body>
