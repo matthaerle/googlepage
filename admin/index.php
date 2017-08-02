@@ -20,6 +20,7 @@
             <form action="links/add" method="post">
     <label for="name">Link Text:</label>
     <input type="text" name="name">
+    <br />
     <label for="url">Link URL:</label>
     <input type="text" name="url"><br>
                 <?php
