@@ -14,15 +14,13 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="col-lg-2"></div>
         <div class="col-lg-2>
-            <form action="links/add" method="post">
+            <form action='links/add' method='post'>
     <label for="name">Link Text:</label>
-    <input type="text" name="name">
+    <input type="text" name="name" />
     <br />
     <label for="url">Link URL:</label>
-    <input type="text" name="url"><br>
+    <input type="text" name="url" /><br>
                 <?php
                 require '../db/db.php';
                 try {
@@ -41,8 +39,7 @@
             <input type="submit" />
             </form>
         </div>
-	</div>
-</div>
+
 
 </body>
 </html>
