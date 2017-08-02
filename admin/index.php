@@ -15,7 +15,7 @@
 <body>
 <div class="row">
     <div class="col-lg-2"> </div>
-        <div class="col-lg-2>
+        <div class="col-lg-2">
                 <form action='links/add' method='post'>
         <label for="name">Link Text:</label>
         <input type="text" name="name" />
