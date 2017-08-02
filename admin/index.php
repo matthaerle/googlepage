@@ -17,7 +17,11 @@
 <div class="container">
     <div class="col-lg-2"></div>
         <div class="col-lg-2>
-            <form action="links/add" method="post">Link Text: <input type="text" name="name"><br>Link URL: <input type="text" name="url"><br>
+            <form action="links/add" method="post">
+    <label for="name">Link Text:</label>
+    <input type="text" name="name">
+    <label for="url">Link URL:</label>
+    <input type="text" name="url"><br>
                 <?php
                 require '../db/db.php';
                 try {
