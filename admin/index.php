@@ -13,7 +13,7 @@
 	
 </head>
 <body>
-
+<div class="col-lg-2"></div>
         <div class="col-lg-2>
             <form action='links/add' method='post'>
     <label for="name">Link Text:</label>
