@@ -21,23 +21,23 @@
         <input type="text" name="name" />
         <br />
         <label for="url">Link URL:</label>
-        <input type="text" name="url" /><br>
+            <input type="text" name="url" /><br>
+                    <select class="form-dropdown" id="group" name="group">
         <?php
         require '../db/db.php';
         try {
             $result = $conn->query("select * from Support_Link_Groups");
-            echo '<select class="form-dropdown" id="group" name="group">';
             foreach ($result as $row) {
                 echo '<option value="' . $row['Group_ID'] .'" >'. $row['Group_Name'] . '</option>';
             }
-            echo '</select>';
         }
         catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
         $conn = null;
         ?>
-        <input type="submit" />
+                    </select>
+            <input type="submit" />
         </form>
     </div>
     </div>
