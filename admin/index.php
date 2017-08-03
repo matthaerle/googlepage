@@ -23,6 +23,7 @@
         <label for="url">Link URL:</label>
             <input type="text" name="url" /><br>
                     <select class="form-control" id="group" name="group">
+                        <option value="0">Select A Group</option>
         <?php
         require '../db/db.php';
         try {
