@@ -16,13 +16,13 @@
 <div class="row">
     <div class="col-lg-2"> </div>
         <div class="col-lg-2">
-                <form action='links/add' method='post'>
+                <form class="form-group" action='links/add' method='post'>
         <label for="name">Link Text:</label>
         <input type="text" name="name" />
         <br />
         <label for="url">Link URL:</label>
             <input type="text" name="url" /><br>
-                    <select class="form-dropdown" id="group" name="group">
+                    <select class="form-control" id="group" name="group">
         <?php
         require '../db/db.php';
         try {
