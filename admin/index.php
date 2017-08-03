@@ -37,7 +37,7 @@
         $conn = null;
         ?>
                     </select>
-            <input type="submit" />
+            <input class="btn btn-default" type="submit" />
         </form>
     </div>
     </div>
