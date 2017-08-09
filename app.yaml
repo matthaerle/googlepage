@@ -1,6 +1,8 @@
 runtime: php55
 api_version: 1
 service: default
+application: homepagematt
+version: home
 
 inbound_services:
   - mail
@@ -33,6 +35,8 @@ handlers:
   script: /admin/index.php
 - url: /admin/links/add
   script: /admin/add.php
+- url: /admin/links/groupadd
+  script: /admin/groupadd.php
 
 # Serve php scripts.
 - url: /
