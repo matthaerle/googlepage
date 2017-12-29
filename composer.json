@@ -1,0 +1,15 @@
+{
+  "name": "google/api-client",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "google/apiclient": "^2.2"
+  }
+}

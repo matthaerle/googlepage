@@ -12,12 +12,10 @@ inbound_services:
 handlers:
 # Serve images as static resources.
 
-- url: /script/.+
-  script: email.php
-  login: admin
+
 - url: /css
   static_dir: css
-- url: /script/
+- url: /script/email
   script: /email.php
 - url: /img
   static_dir: img
@@ -37,6 +35,10 @@ handlers:
   script: /admin/add.php
 - url: /admin/links/groupadd
   script: /admin/groupadd.php
+- url: /layout/layout_head
+  script: /layout/template_head.php
+- url: /script/fill_support_dropdown
+  script: /script/fill_support_dropdown.php
 
 # Serve php scripts.
 - url: /
@@ -45,7 +47,15 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
-  
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- vendor/google
+- vendor/monolog
 # [START env]
 env_variables:
   # Replace project, instance, database, user and password with the values obtained
