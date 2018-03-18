@@ -4,57 +4,18 @@ require 'layout/template_head.php';
 ?>
 
 
-<body id="page-top" class="index">
-    
-<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
-    <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="#page-top">Matt's Homepage</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-responsive-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li class="dropdown" id="support_links">
-
-                        
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#portfolio">School Links</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="page-scroll">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
 
     <!-- Header -->
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img class="img-responsive" src="img/profile.png" style="width: 400px" alt="">
                     <div class="intro-text">
-                        <h1 class="name">Matt's Homepage</h1>
-                        <hr class="star-light">
-                        <span class="skills">Computer Programmer<br />Android Developer - Dot Net - Java Coder - PHP - SQL/MySQL</span>
+                        <h1 class="name" style="color: #070065;">Matt's Homepage</h1>
+                        <hr class="star-primary">
+                        <span class="skills">Computer Programmer<br />Android Developer - Dot Net - Java  - PHP - SQL/MySQL</span>
                     </div>
                 </div>
             </div>
@@ -146,28 +107,28 @@ require 'layout/template_head.php';
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <input type="text" class="form-control" data-validation="required" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="email">Email Address</label>
-                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input data-validation="email"  class="form-control" placeholder="Email Address" id="email_contact" required data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="phone">Phone Number</label>
-                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <input type="tel" data-validation="required" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label for="message">Message</label>
-                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <textarea rows="5" class="form-control" data-validation="required" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -197,10 +158,6 @@ require 'layout/template_head.php';
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
-                            <li>
-                                <a href="http://www.purple.com/">
-                                <img alt="pointlessly purple" src="http://www.purple.com/affinity/pointlessly_purple.png"></a>
-                            </li>
                             <!-- <li>
                                 <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
@@ -467,70 +424,67 @@ require 'layout/template_head.php';
         </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+</body>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
 
-    <!-- Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
+
     
     <script type="text/javascript">
-        
-        var request;
-        /*
-            $("#contactForm").submit(function(event) {
-            event.preventDefault();
-                var $form = $("#contactForm"),
-                    name = $form.find("#name").val(),
-                    url = "https://homepagematt.appspot.com/email",
-                    email = $form.find("#email").val(),
-                    phone = $form.find("#phone").val(),
-                    message = $form.find("#message");
-                console.log(name);
-                
-                var posting = $.post(url , { name: name, email:email, phone:phone,message:message});
-                posting.done(function( data ) {
-                var content = $( data ).find( "#content" );
-                $( "#result" ).empty().append( content );
-              });
-        });
-        */
-        function postStuff(){
-        // Create our XMLHttpRequest object
-        var hr = new XMLHttpRequest();
-        // Create some variables we need to send to our PHP file
-        var url = "/mail";
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var phone = document.getElementById("phone").value;
-        var message = document.getElementById("message").value;
-        var vars = "name="+name+"&email="+email+"&phone="+phone+"&message="+message;
-        hr.open("POST", url, true);
-        hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        // Access the onreadystatechange event for the XMLHttpRequest object
-        hr.onreadystatechange = function() {
-            if(hr.readyState == 4 && hr.status == 200) {
-                var return_data = hr.responseText;
-                document.getElementById("result").innerHTML = return_data;
+
+            function postStuff() {
+                // Create our XMLHttpRequest object
+                var hr = new XMLHttpRequest();
+                // Create some variables we need to send to our PHP file
+                var url = "/mail";
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email_contact").value;
+                var phone = document.getElementById("phone").value;
+                var message = document.getElementById("message").value;
+                var vars = "name=" + name + "&email=" + email + "&phone=" + phone + "&message=" + message;
+                if (name != "" && email != "" && phone != "" && message != "") {
+                    hr.open("POST", url, true);
+                    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    // Access the onreadystatechange event for the XMLHttpRequest object
+                    hr.onreadystatechange = function () {
+                        if (hr.readyState == 4 && hr.status == 200) {
+                            var return_data = hr.responseText;
+                            document.getElementById("result").innerHTML = return_data;
+                        }
+                    }
+                    // Send the data to PHP now... and wait for response to update the status div
+                    hr.send(vars); // Actually execute the request
+                    document.getElementById("result").innerHTML = "processing...";
+                }
+                else {
+                    alert("Please make sure to fill in all boxes");
+                }
             }
-        }
-        // Send the data to PHP now... and wait for response to update the status div
-        hr.send(vars); // Actually execute the request
-        document.getElementById("result").innerHTML = "processing...";
-        }
+
+
         
     </script>
+
 <script src="js/load_dropdown.js" ></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+    $.validate();
+</script>
+<script>
+    $(document).ready(function () {
+        $("#login").click(function () {
+            $('#login-modal').modal();
+        });
+        $("#login-new").click(function () {
+            $('#login-modal').modal('hide');
+            $('#register-modal').modal();
+        });
+    });
+</script>
 <div id="status"></div>
-</body>
+
 
 </html>

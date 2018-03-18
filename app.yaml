@@ -39,6 +39,14 @@ handlers:
   script: /layout/template_head.php
 - url: /script/fill_support_dropdown
   script: /script/fill_support_dropdown.php
+- url: /registration/register
+  script: /registration/register.php
+- url: /registration/login
+  script: /registration/login.php
+- url: /registration/logout
+  script: /registration/logout.php
+- url: /np/redirect
+  script: /np/redirect.php
 
 # Serve php scripts.
 - url: /
