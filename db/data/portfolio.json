@@ -1,0 +1,24 @@
+[
+  {
+    "fileName": "Axis_Mobile.png",
+    "num": 1,
+    "title": "Axis Mobile",
+    "description": "This app was created to replace an aging Windows Mobile version with a newer android version.",
+    "link": "https://github.com/matthaerle/AxisMobile",
+    "client": "Acusport Retail Technology Group",
+    "clientLink": "http://my.acusport.com/AcuSportRTG",
+    "date": "1/24/2018",
+    "service": "Mobile App"
+  },
+  {
+    "fileName": "computer_code.jpg",
+    "num": 2,
+    "title": "Axis Mobile API",
+    "description": "This was created as the server side for Axis Mobile, it connected to a SQL Database and sent and received JSON data between the Android App",
+    "link": "https://github.com/matthaerle/AxisMobileAPI",
+    "client": "Acusport Retail Technology Group",
+    "clientLink": "http://my.acusport.com/AcuSportRTG",
+    "date": "1/24/2018",
+    "service": "Server Side Service"
+  }
+]

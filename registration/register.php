@@ -13,6 +13,7 @@ $username = "";
 $email    = "";
 $errors = array();
 require ('../db/db.php');
+require ('../script/GUID_Maker.php');
 
 if (isset($_POST['reg_user'])) {
     // receive all input values from the form
@@ -51,15 +52,18 @@ if (isset($_POST['reg_user'])) {
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
         $password = md5($password_1);//encrypt the password before saving in the database
+        $user_guid = getGUID();
         try {
-            $result = $conn->exec("INSERT INTO users (username, email, password) 
-  			  VALUES('$username', '$email', '$password')");
+            $result = $conn->exec("INSERT INTO users (username, email, password, user_guid) 
+  			  VALUES('$username', '$email', '$password', '$user_guid')");
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now logged in";
+            header('location: ../');
+            setcookie("user_info",$user_guid,time()+31556926,'/');
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You are now logged in";
-        header('location: ../');
+
     }
 }
 ?>

@@ -1,5 +1,5 @@
 <a class="dropdown-toggle" data-toggle="dropdown" id="drop_down">Tech Support Links<span class="caret"></span></a>
-<ul style="background-color: #2c3e50;" class="dropdown-menu" id="wht_txt">
+<ul class="dropdown-menu" id="wht_txt">
 
     <?php
     require '../db/db.php';

@@ -10,6 +10,9 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['username']);
     header("location: login.php");
 }
+if(isset($_COOKIE["user_info"])) {
+    echo "<script>Alert(".$_COOKIE['user_info'] .")</script>";
+}
 ?>
 <html>
 <head>
@@ -19,19 +22,19 @@ if (isset($_GET['logout'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Theme CSS -->
-    <link href="../css/freelancer.css" rel="stylesheet">
+    <link href="/css/freelancer.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <!-- Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
+    <script src="/js/freelancer.js"></script>
 
 </head>
 <body id="page-top" class="index">
@@ -62,7 +65,7 @@ if (isset($_GET['logout'])) {
                 </li>
                 <?php ($_SESSION['username'] == 'matt') ? include 'admin.html' : ''?>
                 <li class="page-scroll">
-                    <a href="#portfolio">School Links</a>
+                    <a href="#portfolio">Stuff I've Made</a>
                 </li>
                 <li class="page-scroll">
                     <a href="#about">About</a>

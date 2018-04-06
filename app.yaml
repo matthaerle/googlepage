@@ -1,6 +1,6 @@
 runtime: php55
 api_version: 1
-service: default
+service: debug
 application: homepagematt
 version: home
 
@@ -47,6 +47,8 @@ handlers:
   script: /registration/logout.php
 - url: /np/redirect
   script: /np/redirect.php
+- url: /layout/pieces/portfolio_piece.php
+  script: /layout/pieces/portfolio_piece.php
 
 # Serve php scripts.
 - url: /

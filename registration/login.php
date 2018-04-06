@@ -12,6 +12,8 @@ $username = "";
 $email    = "";
 $errors = array();
 require ("../db/db.php");
+
+
 if (isset($_POST['login_user'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -30,11 +32,14 @@ if (isset($_POST['login_user'])) {
         if ($results->fetchColumn() > 0) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
+            $user_guid = $results->fetchColumn(5);
+            setcookie("user_info",$user_guid,time()+31556926,'/');
             header('location: /');
         } else {
             array_push($errors, "Wrong username/password combination");
         }
     }
 }
+
 
 ?>
