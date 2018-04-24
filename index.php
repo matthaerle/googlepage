@@ -1,12 +1,38 @@
 <?php
 $head_title = "Matt Haerle's Homepage";
-require 'layout/template_head.php';
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    //header('location: login.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+}
+if(isset($_COOKIE["user_info"])) {
+    echo "<script>Alert(".$_COOKIE['user_info'] .")</script>";
+}
 ?>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/layout/pieces/Head.php');?>
+
+
+
+</head>
+<body id="page-top" class="index" ng-controller="myCtrl">
+
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/layout/pieces/Login_Nav.php') ?>
 
 
 
 
-    <!-- Header -->
+
+
+<!-- Header -->
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
@@ -24,7 +50,6 @@ require 'layout/template_head.php';
 
     <!-- Portfolio Grid Section -->
 
-
     <section id="portfolio">
 	
         <div class="container">
@@ -34,16 +59,22 @@ require 'layout/template_head.php';
                     <hr class="star-primary">
                 </div>
             </div>
-            <div class="row">
-                <?php
-                include $_SERVER['DOCUMENT_ROOT'].'/layout/pieces/portfolio_piece.php';
-                $string = file_get_contents($_SERVER['DOCUMENT_ROOT']."/db/data/portfolio.json");
-                $json = json_decode($string,true);
+            <div class="row"  >
 
-                foreach ($json as $portfolio => $portfolioItem) {
-                    Load_Portfolio_Piece($portfolioItem['fileName'],$portfolioItem['num'],$portfolioItem['title']);
-                }
-                ?>
+                <div ng-repeat-start="port in portfolio" class='col-sm-4 portfolio-item'>
+                    <a ng-href='#portfolioModal{{port.num}}' class='portfolio-link' data-toggle='modal' data-tooltip='tooltip' title='{{port.title}}'>
+                        <div class='caption'>
+                            <div class='caption-content'>
+                                <i class='fa fa-search-plus fa-3x'></i>
+                            </div>
+                        </div>
+                        <img  ng-src='../../img/portfolio/{{port.fileName}}' class='img-responsive' alt=''>
+                        <p>{{port.title}}</p>
+                    </a>
+                </div >
+                <div ng-repeat-end ></div>
+
+
 
             </div>
         </div>
@@ -61,60 +92,15 @@ require 'layout/template_head.php';
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Welcome to my home page, if you have found this webpage, congratulations</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>This page was coded with PHP and uses MySQL</p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div ng-repeat="x in about_me" class="col-lg-6">
+                    <p>{{x.aboutMe}}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-<?php
 
-Display_Contact_Form();
-?>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-5">
-                        <h3>Location</h3>
-                        <p>Sartell, MN 56377</p>
-                    </div>
-                    <div class="footer-col col-md-5">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="https://twitter.com/Typical_Id10t?lang=en" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/matt-haerle-7ba211b3/" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/matthaerle" class="btn-social btn-outline"><span class="sr-only">GitHub</span><i class="fa fa-fw fa-github"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Matt Haerle 2016
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
@@ -122,138 +108,61 @@ Display_Contact_Form();
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
+<div >
+    <div ng-repeat="x in portfolio" class='portfolio-modal modal fade' ng id='portfolioModal{{x.num}}' tabindex='-1' role='dialog' aria-hidden='true'>
+        <div class='modal-content'>
+            <div class='close-modal' data-dismiss='modal'>
+                <div class='lr'>
+                    <div class='rl'>
+                    </div>
+                </div>
+            </div>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-lg-8 col-lg-offset-2'>
+                        <div class='modal-body'>
+                            <h2>{{x.title}}</h2>
+                            <hr class='star-primary'>
+                            <a href='{{x.link}}'>
+                                <img ng-src='../../img/portfolio/{{x.fileName}}' class='img-responsive img-centered' alt=''>
+                            </a>
+
+                            <p><b>Description:</b><br />{{x.description}}</p>
+                            <p><b>Technolgy used:</b><br />{{x.technologyUsed}}</p>
+                            <a class="btn btn-default" ng-href="{{x.link}}">View GitHub</a>
+                            <ul class='list-inline item-details'>
+                                <li>Client:
+                                    <strong><a href='{{x.clientLink}}'>{{x.client}}</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href='{{x.link}}'>{{x.date}}</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href='{{x.link}}'>{{x.service}}</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type='button' class='btn btn-default' data-dismiss='modal'><i class='fa fa-times'></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <?php
-foreach ($json as $portfolio => $portfolioItem) {
-    Load_Portfolio_Piece_Modal($portfolioItem['fileName'],$portfolioItem['num'],$portfolioItem['title'],$portfolioItem['description'],$portfolioItem['link'],$portfolioItem['client'],$portfolioItem['clientLink'],$portfolioItem['date'],$portfolioItem['service']);
-}
-
-
+include_once ($_SERVER['DOCUMENT_ROOT']."/layout/pieces/Contact_Form.php");
+Display_Contact_Form();
 ?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/layout/pieces/footer.html');?>
 </body>
 
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-
-    
-    <script type="text/javascript">
-
-            function postStuff() {
-                // Create our XMLHttpRequest object
-                var hr = new XMLHttpRequest();
-                // Create some variables we need to send to our PHP file
-                var url = "/mail";
-                var name = document.getElementById("name").value;
-                var email = document.getElementById("email_contact").value;
-                var phone = document.getElementById("phone").value;
-                var message = document.getElementById("message").value;
-                var vars = "name=" + name + "&email=" + email + "&phone=" + phone + "&message=" + message;
-                if (name != "" && email != "" && phone != "" && message != "") {
-                    hr.open("POST", url, true);
-                    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                    // Access the onreadystatechange event for the XMLHttpRequest object
-                    hr.onreadystatechange = function () {
-                        if (hr.readyState == 4 && hr.status == 200) {
-                            var return_data = hr.responseText;
-                            document.getElementById("result").innerHTML = return_data;
-                        }
-                    }
-                    // Send the data to PHP now... and wait for response to update the status div
-                    hr.send(vars); // Actually execute the request
-                    document.getElementById("result").innerHTML = "processing...";
-                }
-                else {
-                    alert("Please make sure to fill in all boxes");
-                }
-            }
-
-
-        
-    </script>
-
-<script src="js/load_dropdown.js" ></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script>
-    $.validate();
-</script>
-<script>
-    $(document).ready(function () {
-        $("#login").click(function () {
-            $('#login-modal').modal();
-        });
-        $("#login-new").click(function () {
-            $('#login-modal').modal('hide');
-            $('#register-modal').modal();
-        });
-        $('[data-tooltip="tooltip"]').tooltip();
-        $('.close-modal').click(function () {
-            $('[data-tooltip="tooltip"]').tooltip("hide");
-        });
-    });
-</script>
-<div id="status"></div>
+<?include_once($_SERVER['DOCUMENT_ROOT'].'/layout/pieces/Bottom_Scripts.html');?>
 
 
 </html>
 
-<?php
-function Display_Contact_Form() {
-    echo "<section id=\"contact\">
-        <div class=\"container\">
-            <div class=\"row\">
-                <div class=\"col-lg-12 text-center\">
-                    <h2>Contact Me</h2>
-                    <hr class=\"star-primary\">
-                </div>
-            </div>
-            <div class=\"row\">
-                <div class=\"col-lg-8 col-lg-offset-2\">
-                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name=\"sentMessage\" id=\"contactForm\"  novalidate>
-                        <div class=\"row control-group\">
-                            <div class=\"form-group col-xs-12 floating-label-form-group controls\">
-                                <label for=\"name\">Name</label>
-                                <input type=\"text\" class=\"form-control\" data-validation=\"required\" placeholder=\"Name\" id=\"name\" required data-validation-required-message=\"Please enter your name.\">
-                                <p class=\"help-block text-danger\"></p>
-                            </div>
-                        </div>
-                        <div class=\"row control-group\">
-                            <div class=\"form-group col-xs-12 floating-label-form-group controls\">
-                                <label for=\"email\">Email Address</label>
-                                <input data-validation=\"email\"  class=\"form-control\" placeholder=\"Email Address\" id=\"email_contact\" required data-validation-required-message=\"Please enter your email address.\">
-                                <p class=\"help-block text-danger\"></p>
-                            </div>
-                        </div>
-                        <div class=\"row control-group\">
-                            <div class=\"form-group col-xs-12 floating-label-form-group controls\">
-                                <label for=\"phone\">Phone Number</label>
-                                <input type=\"tel\" data-validation=\"required\" class=\"form-control\" placeholder=\"Phone Number\" id=\"phone\" required data-validation-required-message=\"Please enter your phone number.\">
-                                <p class=\"help-block text-danger\"></p>
-                            </div>
-                        </div>
-                        <div class=\"row control-group\">
-                            <div class=\"form-group col-xs-12 floating-label-form-group controls\">
-                                <label for=\"message\">Message</label>
-                                <textarea rows=\"5\" class=\"form-control\" data-validation=\"required\" placeholder=\"Message\" id=\"message\" required data-validation-required-message=\"Please enter a message.\"></textarea>
-                                <p class=\"help-block text-danger\"></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div id=\"success\"></div>
-                        <div class=\"row\">
-                            <div class=\"form-group col-xs-12\">
-                                <button onclick=\"postStuff();\" class=\"btn btn-success btn-lg\" type=\"button\">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div id=\"result\"></div>
-                </div>
-            </div>
-        </div>
-    </section>";
-}
-
-?>

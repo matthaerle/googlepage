@@ -3,8 +3,8 @@
   <component name="FacetManager">
     <facet type="google-appengine-php" name="Google App Engine (Python)">
       <configuration>
-        <option name="rootFolder" value="C:\Users\Matt\PhpstormProjects\googlepage" />
-        <option name="sdkFolder" value="C:\Users\Matt\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine" />
+        <option name="rootFolder" value="C:\Users\matth\PhpstormProjects\googlepage" />
+        <option name="sdkFolder" value="C:\Users\matth\AppData\Local\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine" />
         <option name="pythonPath" value="C:\Python27\pythonw.exe" />
         <option name="email" value="matthaerle@gmail.com" />
         <option name="gp" value="dfe7df9bdfd9dfdedfcfdfd8dfe9dfc2dfc3dfcfdfcc" />
@@ -38,63 +38,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="PHP" type="php">
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bootstrap/css" />
-          <root url="file://$MODULE_DIR$/vendor/bootstrap/fonts" />
-          <root url="file://$MODULE_DIR$/vendor/bootstrap/js" />
-          <root url="file://$MODULE_DIR$/vendor/composer" />
-          <root url="file://$MODULE_DIR$/vendor/firebase/php-jwt" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/css" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/fonts" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/less" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/scss" />
-          <root url="file://$MODULE_DIR$/vendor/google/apiclient" />
-          <root url="file://$MODULE_DIR$/vendor/google/apiclient-services" />
-          <root url="file://$MODULE_DIR$/vendor/google/auth" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
-          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
-          <root url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
-          <root url="file://$MODULE_DIR$/vendor/psr/cache" />
-          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
-          <root url="file://$MODULE_DIR$/vendor/psr/log" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bootstrap/css" />
-          <root url="file://$MODULE_DIR$/vendor/bootstrap/fonts" />
-          <root url="file://$MODULE_DIR$/vendor/bootstrap/js" />
-          <root url="file://$MODULE_DIR$/vendor/composer" />
-          <root url="file://$MODULE_DIR$/vendor/firebase/php-jwt" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/css" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/fonts" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/less" />
-          <root url="file://$MODULE_DIR$/vendor/font-awesome/scss" />
-          <root url="file://$MODULE_DIR$/vendor/google/apiclient" />
-          <root url="file://$MODULE_DIR$/vendor/google/apiclient-services" />
-          <root url="file://$MODULE_DIR$/vendor/google/auth" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
-          <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
-          <root url="file://$MODULE_DIR$/vendor/phpseclib/phpseclib" />
-          <root url="file://$MODULE_DIR$/vendor/psr/cache" />
-          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
-          <root url="file://$MODULE_DIR$/vendor/psr/log" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHARS">
-        <CLASSES>
-          <root url="phar://$MODULE_DIR$/composer.phar/" />
-        </CLASSES>
-        <SOURCES>
-          <root url="phar://$MODULE_DIR$/composer.phar/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="angular" level="application" />
   </component>
 </module>

@@ -1,0 +1,5 @@
+[
+  {"aboutMe": "Welcome to my homepage, this site is used both as a portfolio of stuff I've done but also a playground of different technologies.  The backend is mostly PHP and there are some connections to a MySQL database hosted on Google Cloud, the site also includes Angular receiving data from JSON files, this text is one of those examples.  This website is also hosted on Google App Engine","type":"text"},
+  {"aboutMe": "I have always loved working on computers, when I started going to college I was initially going for network administration and then I started doing tech support at a company that develops their own piece of software and seeing that process is what made me switch my major to Computer Programming.  I think the thing that I like the most about being a computer programmer is the sense of accomplishment when I see something that I have been working on complete.","type":"text"}
+
+]

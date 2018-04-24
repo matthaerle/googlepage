@@ -1,8 +1,9 @@
 runtime: php55
 api_version: 1
-service: debug
+service: default
 application: homepagematt
 version: home
+
 
 inbound_services:
   - mail
@@ -11,8 +12,8 @@ inbound_services:
 
 handlers:
 # Serve images as static resources.
-
-
+- url: /db/data
+  static_dir: db/data
 - url: /css
   static_dir: css
 - url: /script/email
@@ -35,8 +36,6 @@ handlers:
   script: /admin/add.php
 - url: /admin/links/groupadd
   script: /admin/groupadd.php
-- url: /layout/layout_head
-  script: /layout/template_head.php
 - url: /script/fill_support_dropdown
   script: /script/fill_support_dropdown.php
 - url: /registration/register
@@ -47,8 +46,8 @@ handlers:
   script: /registration/logout.php
 - url: /np/redirect
   script: /np/redirect.php
-- url: /layout/pieces/portfolio_piece.php
-  script: /layout/pieces/portfolio_piece.php
+- url: /layout/pieces/Head
+  script: /layout/pieces/Head.php
 
 # Serve php scripts.
 - url: /

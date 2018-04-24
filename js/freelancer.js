@@ -12,6 +12,7 @@
         event.preventDefault();
     });
 
+
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
@@ -46,11 +47,11 @@
     });*/
     
     // Offset for Main Navigation
-    $('#mainNav').affix({
+    /*$('#mainNav').affix({
         offset: {
             top: 100
         }
-    })
+    })*/
 
     // Floating label headings for the contact form
     $(function() {

@@ -1,0 +1,72 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+
+
+
+<!-- Theme JavaScript -->
+<script src="/js/freelancer.js"></script>
+
+<script type="text/javascript">
+
+    function postStuff() {
+        // Create our XMLHttpRequest object
+        var hr = new XMLHttpRequest();
+        // Create some variables we need to send to our PHP file
+        var url = "/mail";
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email_contact").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+        var vars = "name=" + name + "&email=" + email + "&phone=" + phone + "&message=" + message;
+        if (name != "" && email != "" && phone != "" && message != "") {
+            hr.open("POST", url, true);
+            hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // Access the onreadystatechange event for the XMLHttpRequest object
+            hr.onreadystatechange = function () {
+                if (hr.readyState == 4 && hr.status == 200) {
+                    var return_data = hr.responseText;
+                    document.getElementById("result").innerHTML = return_data;
+                }
+            }
+            // Send the data to PHP now... and wait for response to update the status div
+            hr.send(vars); // Actually execute the request
+            document.getElementById("result").innerHTML = "processing...";
+        }
+        else {
+            alert("Please make sure to fill in all boxes");
+        }
+    }
+
+
+
+</script>
+
+<script src="js/load_dropdown.js" ></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+    $.validate();
+</script>
+<script>
+    $(document).ready(function () {
+        $("#login").click(function () {
+            $('#login-modal').modal();
+        });
+        $("#login-new").click(function () {
+            $('#login-modal').modal('hide');
+            $('#register-modal').modal();
+        });
+        $('[data-tooltip="tooltip"]').tooltip();
+        $('.close-modal').click(function () {
+            $('[data-tooltip="tooltip"]').tooltip("hide");
+        });
+    });
+</script>
+
+<script src="/js/myApp.js"></script>
+<div id="status"></div>
